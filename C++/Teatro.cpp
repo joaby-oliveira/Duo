@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <windows.h>
 #include <locale.h>
+#include <ctype.h>
 
 int main(){
 	setlocale(LC_ALL, "portuguese");
-	char chair[20][25];
-	int alt = 0, larg = 0;
+	int alt = 501, larg = 501;
 	
+	while(isalnum(str[alt])){
     printf("");
 	scanf("%i", &alt);
 
 	printf("");
 	scanf("%i", &larg);
+}
+    char chair[alt][larg];
 
     larg = larg - 1;
 	alt = alt - 1;
