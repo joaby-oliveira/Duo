@@ -4,65 +4,117 @@
  
 int main(){
 	setlocale(LC_ALL, "portuguese");
-	int alt = 501, larg = 501, escolha, val_sala, val_ingresso;
-	
-	while(alt * larg > 500){
-    printf("Digite a altura: ");
-	scanf("%i", &alt);
+	int height = 501, width = 501, choice, valTicket;
 
-	printf("\nDigite a largura: ");
-	scanf("%i", &larg);
-}
-    char chair[alt][larg];
-
-    larg = larg - 1;
-	alt = alt - 1;
-
-	for(int i = 0; i <= alt; i++){
-		for(int j = 0; j <= larg; j++){
-			chair[i][j] = ' ' ;
-
-		}
-	}
-	for(int i = 0; i <= alt; i++){
-		for(int j = 0; j <= larg; j++){
-            printf("| |");
-			if(j == larg){
-				printf("\n");
-			}
-		}
-	}
-
-	printf("Digite o nÃºmero correspondente ao que deseja fazer.\n");
-	printf("[1]Abrir um espetÃ¡culo\n[2]Verificar um espetÃ¡culo\n[3]Encerrar um espetÃ¡culo\n");
-	scanf("%i", &escolha);
-	switch(escolha){
+//	while(height * width > 500){
+//    printf("Digite a altura: ");
+//	scanf("%i", &height);
+//
+//	printf("\nDigite a largura: ");
+//	scanf("%i", &width);
+//}
+//    char chair[height][width];
+//
+//    width = width - 1;
+//	height = height - 1;
+//
+//	for(int i = 0; i <= height; i++){
+//		for(int j = 0; j <= width; j++){
+//			chair[i][j] = 'D' ;
+//
+//		}
+//	}
+//	for(int i = 0; i <= height; i++){
+//		for(int j = 0; j <= width; j++){
+//            printf("|%c|", chair[i][j]);
+//			if(j == width){
+//				printf("\n");
+//			}
+//		}
+//	}
+//	Sleep(3000);
+//	system("cls");
+	printf("SEJA BEM VINDO AO TEATHSYS");
+	printf("\n[1]Abrir um espetáculo\n[2]Verificar um espetáculo\n[3]Encerrar um espetáculo");
+	printf("\nDigite o número correspondente ao que deseja fazer: ");
+	scanf("%i", &choice);
+	Sleep(500);
+	system("cls");
+	switch(choice){
 		case 1:
-			printf("Digite o nÃºmero correspondente Ã  funÃ§Ã£o que deseja: \n");	
-			printf("[1]Informar o tamanho da sala e o valor do ingresso. \n");
-			scanf("%i", &escolha);
-			switch(escolha){
+			printf("[1]Informar o tamanho da sala e o valor do ingresso.");
+			printf("\nDigite o número correspondente à função que deseja: ");	
+			scanf("%i", &choice);
+			Sleep(500);
+			system("cls");
+			switch(choice){
 				case 1:
-					printf("Digite o tamanho da sala: ");
-					scanf("%i", &val_sala);
+					do{
+						if(height * width > 500){
+							printf("Por favor, digitar valores que se multiplicados um pelo outro o resultado seja menor ou igual que 500\n");
+						}
+					    printf("Digite a altura: ");
+						scanf("%i", &height);
+						Sleep(500);
+						system("cls");
+						printf("\nDigite a largura: ");
+						scanf("%i", &width);
+						
+					    char chair[height][width];
+					    
+					    width = width - 1;
+						height = height - 1;
+						
+						
+						for(int i = 0; i <= height; i++){
+							for(int j = 0; j <= width; j++){
+								chair[i][j] = 'D' ;
+					
+							}
+						}
+						for(int i = 0; i <= height; i++){
+							for(int j = 0; j <= width; j++){
+					            printf("|%c|", chair[i][j]);
+								if(j == width){
+									printf("\n");
+								}
+							}
+						}
+					}while(height * width > 500);
+					
+					Sleep(3000);
+					system("cls");
+					
 					printf("\nDigite o valor do ingresso: ");
-					scanf("%i", &val_ingresso);
+					scanf("%i", &valTicket);
+					
 					break;
+					
 					}
+					
 					break;
 		case 2:
-			printf("Digite o nÃºmero correspondente Ã  funÃ§Ã£o que deseja: \n");	
 			printf("[1]Verificar mapa do teatro\n[2]Verificar parciais\n[3]Vender um lugar");
-			scanf("%i", &escolha);
-			switch (escolha){
+			printf("\nDigite o número correspondente à função que deseja: \n");	
+			scanf("%i", &choice);
+			switch (choice){
 				case 1:
-					printf("Digite o numero da funÃ§Ã£o desejada:");
+					printf("Mapa verificado com sucesso!");
+					break;
+				
+				case 2:
+					printf("Parciais verificadas com sucesso!");
+					break;
+				
+				case 3:
 					printf("[1]Inteira [2]Meia: ");
-					scanf("%i", &escolha);
-					switch(escolha){
+					printf("\nDigite o numero da função desejada: ");
+					scanf("%i", &choice);
+					switch(choice){
 						case 1:
 							printf("Inteira escolhida com sucesso!");
 							break;
+				
 						case 2:
 							printf("Meia escolhida com sucesso!");
 							break;
@@ -74,3 +126,5 @@ int main(){
 			break;
 	}
 }
+
+
