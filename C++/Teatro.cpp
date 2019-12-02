@@ -4,8 +4,9 @@
  
 int main(){
 	setlocale(LC_ALL, "portuguese");
-	int height = 501, width = 501, choice, valTicket;
+	int height = 50, width = 10, choice, valTicket, totTicket;
 
+//Recebe o valor de altura e largura
 //	while(height * width > 500){
 //    printf("Digite a altura: ");
 //	scanf("%i", &height);
@@ -13,27 +14,28 @@ int main(){
 //	printf("\nDigite a largura: ");
 //	scanf("%i", &width);
 //}
-//    char chair[height][width];
-//
 //    width = width - 1;
 //	height = height - 1;
-//
-//	for(int i = 0; i <= height; i++){
-//		for(int j = 0; j <= width; j++){
-//			chair[i][j] = 'D' ;
-//
-//		}
-//	}
-//	for(int i = 0; i <= height; i++){
-//		for(int j = 0; j <= width; j++){
-//            printf("|%c|", chair[i][j]);
-//			if(j == width){
-//				printf("\n");
-//			}
-//		}
-//	}
-//	Sleep(3000);
-//	system("cls");
+
+    char chair[50][10];
+
+	for(int i = 0; i <= 49; i++){
+		for(int j = 0; j <= 9; j++){
+			chair[i][j] = 'L';
+		}
+	}
+	for(int i = 0; i <= 49; i++){
+		for(int j = 0; j <= 9; j++){
+            printf("|%c|", chair[i][j]);
+			if(j == 9){
+				printf("\n");
+			}
+		}
+	}
+	
+	Sleep(3000);
+	system("cls");
+
 	printf("SEJA BEM VINDO AO TEATHSYS");
 	printf("\n[1]Abrir um espetáculo\n[2]Verificar um espetáculo\n[3]Encerrar um espetáculo");
 	printf("\nDigite o número correspondente ao que deseja fazer: ");
@@ -59,41 +61,43 @@ int main(){
 						system("cls");
 						printf("\nDigite a largura: ");
 						scanf("%i", &width);
-						
-					    char chair[height][width];
 					    
-					    width = width - 1;
-						height = height - 1;
+//					    width = width - 1;
+//						height = height - 1;
 						
-						
-						for(int i = 0; i <= height; i++){
-							for(int j = 0; j <= width; j++){
-								chair[i][j] = 'D' ;
-					
+						for(int i = 0; i < height; i++){
+							for(int j = 0; j < width; j++){
+								chair[i][j] = 'O';
 							}
 						}
-						for(int i = 0; i <= height; i++){
-							for(int j = 0; j <= width; j++){
+						
+						for(int i = 0; i <= 49; i++){
+							for(int j = 0; j <= 9; j++){
 					            printf("|%c|", chair[i][j]);
-								if(j == width){
+								if(j == 9){
 									printf("\n");
 								}
 							}
 						}
+						
 					}while(height * width > 500);
 					
-					Sleep(3000);
+					Sleep(10000);
 					system("cls");
 					
 					printf("\nDigite o valor do ingresso: ");
 					scanf("%i", &valTicket);
-					
+					totTicket = (height * width) * valTicket;
+					printf("O valor total dos ingressos é: %i", totTicket);
 					break;
 					
 					}
 					
 					break;
 		case 2:
+			/* TODO (Joaby#1#): Criar base da array com 20 ou 25 */
+			/* TODO (Joaby#2#): A */
+			
 			printf("[1]Verificar mapa do teatro\n[2]Verificar parciais\n[3]Vender um lugar");
 			printf("\nDigite o número correspondente à função que deseja: \n");	
 			scanf("%i", &choice);
