@@ -17,21 +17,47 @@ int main(){
 //    width = width - 1;
 //	height = height - 1;
 
-    char chair[50][10];
+    char chair[25][20];
 
-	for(int i = 0; i <= 49; i++){
-		for(int j = 0; j <= 9; j++){
+	for(int i = 0; i <= 24; i++){
+		for(int j = 0; j <= 19; j++){
 			chair[i][j] = 'L';
 		}
 	}
-	for(int i = 0; i <= 49; i++){
-		for(int j = 0; j <= 9; j++){
+	
+	printf("---------------------------TEATHSYS---------------------------\n");
+	
+	printf("¦|%c|", chair[0][0]);
+	for(int i = 0; i < 1; i++){	
+		for(int j = 0; j <= 18; j++){
             printf("|%c|", chair[i][j]);
-			if(j == 9){
-				printf("\n");
+			if(j == 18){
+				printf("¦\n¦");
 			}
 		}
 	}
+	
+	for(int i = 0; i < 22; i++){	
+		for(int j = 0; j <= 19; j++){
+            printf("|%c|", chair[i][j]);
+			if(j == 19){
+				printf("¦\n¦");
+			}
+		}
+	}
+	
+	for(int i = 0; i < 1; i++){	
+		for(int j = 0; j <= 19; j++){
+            printf("|%c|", chair[i][j]);
+			if(j == 19){
+				printf("¦\n");
+			}
+		}
+	}
+	
+	printf("---------------------------TEATHSYS---------------------------\n");
+	
+	/*Modify by Adrian: Seats dimension changed to 25x20*/
 	
 	Sleep(3000);
 	system("cls");
@@ -51,17 +77,38 @@ int main(){
 			system("cls");
 			switch(choice){
 				case 1:
-					do{
-						if(height * width > 500){
-							printf("Por favor, digitar valores que se multiplicados um pelo outro o resultado seja menor ou igual que 500\n");
-						}
-					    printf("Digite a altura: ");
+					do{	
+					    printf("Lotação máxima de 500 pessoas. Disponíveis 25 Fileiras com 20 Cadeiras em cada.");
+						printf("Digite a quantidade de fileiras [Max. 25]: ");
 						scanf("%i", &height);
 						Sleep(500);
 						system("cls");
-						printf("\nDigite a largura: ");
+						if(height > 25){
+							printf("Inválido!!! Digite a quantidade de fileiras [Max. 25]: ");
+							scanf("%i", &height);
+							Sleep(500);
+							system("cls");
+						}
+						
+						printf("\nDigite quantas cadeiras quer em cada fileira [Max. 20]: ");
 						scanf("%i", &width);
-					    
+					   	Sleep(500);
+						system("cls");
+					   	if(width > 20){
+					   		printf("\nInválido!!! Digite quantas cadeiras quer em cada fileira [Max. 20]: ");
+							scanf("%i", &width);
+							Sleep(500);
+							system("cls");
+						   }
+					   	while(height * width > 500){
+							printf("Lotação máxima: 500 pessoas. Insira um tamanho menor\n");
+							printf("Digite a quantidade de fileiras: ");
+							scanf("%i", &height);
+							Sleep(500);
+							system("cls");
+							printf("\nDigite quantas cadeiras quer em cada fileira: ");
+							scanf("%i", &width);
+						}
 //					    width = width - 1;
 //						height = height - 1;
 						
@@ -71,10 +118,10 @@ int main(){
 							}
 						}
 						
-						for(int i = 0; i <= 49; i++){
-							for(int j = 0; j <= 9; j++){
+						for(int i = 0; i <= 24; i++){
+							for(int j = 0; j <= 19; j++){
 					            printf("|%c|", chair[i][j]);
-								if(j == 9){
+								if(j == 19){
 									printf("\n");
 								}
 							}
