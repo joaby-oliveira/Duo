@@ -1,0 +1,50 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: rgb(65, 65, 65);
+}
+#cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(255, 97, 97);
+    display: center;
+    margin:20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 14px 0px rgba(0, 0, 0, 0.582);
+}
+
+#name{
+    font-style: italic;
+    font-size: 2rem;	
+    padding: 1px;
+    margin: 0px;
+    color: rgb(0, 0, 0);
+}
+
+#description{
+    font-size: 1.25rem;
+    margin: 1px;
+    padding: 10px;
+}
+
+.type{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 14px 0px rgb(0, 0, 0);
+}
+
+h3{
+    padding-left: 20px;
+    padding-top: 20px;
+    margin: 0px;
+}
+
+footer{
+    color: red;
+    font-size: 1.3rem;
+}
