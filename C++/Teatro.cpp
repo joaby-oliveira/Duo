@@ -145,7 +145,7 @@ int main(){
 						printf("\nDigite o valor do ingresso: ");
 						scanf("%f", &valTicket);
 						//totTicket = 0;
-						printf("O valor total dos ingressos é: R$ %.2f \n", valTicket);
+						
 						Sleep(2000);
 						system("cls");
 						charge();
@@ -202,6 +202,7 @@ int main(){
 						printf("Ingressos no valor de %.2fR$\n", valTicket);
 						printf("\nAté o momento: \n%i inteiras foram vendidas\n", intTicket);
 						printf("\n%i meias foram vendidas\n", halfTicket);
+						printf("O valor total dos ingressos é: R$ %.2f \n", valTicket);
 						//printf("O teatro arrecadou %.2fR$\n", (intTicket*valTicket) + (halfTicket*(valTicket/2)));
 						
 						//#Adda#: Corrigir meia entrada, valor não tem variavél própria, e não mostra mapa do teatro na compra
