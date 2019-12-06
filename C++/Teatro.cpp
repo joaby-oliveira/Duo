@@ -31,8 +31,8 @@ void charge ();
 int main(){
 	setlocale(LC_ALL, "portuguese");
 	
-	int height = 50, width = 10, choice, col, row;
-	float valTicket, totTicket;
+	int height = 50, width = 10, choice, col, row, intTicket = 0, halfTicket = 0;
+	float valTicket = 0, totTicket = 0;
     char chair[25][20];
 	bool broke = false;
 //		charge();
@@ -64,6 +64,11 @@ int main(){
 //		charge();
 	do{
 		system	("cls");
+		
+		//main label
+		inicio:
+			
+		system("cls");
 		printf("SEJA BEM VINDO AO TEATHSYS");
 		printf("\n[1]Abrir um espetáculo\n[2]Verificar um espetáculo\n[3]Encerrar um espetáculo");
 		printf("\nDigite o número correspondente ao que deseja fazer: ");
@@ -139,9 +144,9 @@ int main(){
 						
 						printf("\nDigite o valor do ingresso: ");
 						scanf("%f", &valTicket);
-						totTicket = 0;
-						printf("O valor total dos ingressos é: R$ %.2f \n", totTicket);
-						Sleep(200);
+						//totTicket = 0;
+						printf("O valor total dos ingressos é: R$ %.2f \n", valTicket);
+						Sleep(2000);
 						system("cls");
 						charge();
 						break;
@@ -157,6 +162,13 @@ int main(){
 				}
 		break;
 			case 2:
+				
+				if (chair [0][0] == 'L'){
+					system("cls");
+					printf("Nenhum espetáculo ocorrendo no momento...\n");
+					system("pause");
+					goto inicio;
+				}
 	
 				printf("[1]Verificar mapa do teatro\n[2]Verificar parciais\n[3]Vender um lugar\n[4]Ver o valor total arrecadado");
 				printf("\nDigite o número correspondente à função que deseja: ");	
@@ -182,15 +194,23 @@ int main(){
 						break;
 					
 					case 2:
-						/* TODO (#1#): Limpar tela ao pedir a função 2/3 */
-						/* TODO (#1#): Adcionar as parciais
-						               
-						               
-						                */
+						Sleep(200);
+						system("cls");
+						charge();
+						
+						printf("O espetáculo dispõe de: \n%i poltronas\n", width*height);
+						printf("Ingressos no valor de %.2fR$\n", valTicket);
+						printf("\nAté o momento: \n%i inteiras foram vendidas\n", intTicket);
+						printf("\n%i meias foram vendidas\n", halfTicket);
+						//printf("O teatro arrecadou %.2fR$\n", (intTicket*valTicket) + (halfTicket*(valTicket/2)));
+						
+						//#Adda#: Corrigir meia entrada, valor não tem variavél própria, e não mostra mapa do teatro na compra
+						
 						/* TODO (#1#): Alinhar mapa do switch 2/1 */
 						/* TODO (#1#): Apresentação melhor do sistema...
  */
-						printf("Parciais verificadas com sucesso!");
+						printf("\nParciais verificadas com sucesso!");
+						system("pause");
 						break;
 					
 					case 3:
@@ -228,10 +248,26 @@ int main(){
 								
 								
 								totTicket = totTicket + valTicket;
+								
+								intTicket = intTicket + 1;
+								
 								printf("Inteira escolhida com sucesso!");
 								
 								break;
 							case 2:
+								
+								
+								printf("---------------------------TEATHSYS---------------------------\n");
+								for(int i = 0; i < 25; i++){	
+									for(int j = 0; j <= 18; j++){
+						    	        printf("|%c|", chair[i][j]);
+										if(j == 18){
+										printf("\n");
+										}
+									}
+								}		
+								printf("---------------------------TEATHSYS---------------------------\n");
+								
 								printf("Digite a coluna da cadeira que deseja usar: ");
 								scanf("%i", &col);
 								
@@ -249,12 +285,14 @@ int main(){
 								
 								totTicket = totTicket + (valTicket / 2);
 								
+								halfTicket = halfTicket + 1;
+								
 								printf("Meia escolhida com sucesso!");
 								break;
 						}
 					case 4:
-						printf("O valor total é de %.2f\n", totTicket);
-						Sleep(1000);
+						printf("\nO valor total é de %.2f\n", totTicket);
+						Sleep(3000);
 						system("pause");
 				}
 				break;
