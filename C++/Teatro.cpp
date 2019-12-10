@@ -98,7 +98,7 @@ int main(){
 								system("cls");
 							}
 							
-							printf("\nDigite quantas cadeiras quer em cada fileira [Max. 20]: ");
+							printf("Digite quantas cadeiras quer em cada fileira [Max. 20]: ");
 							scanf("%i", &width);
 						   	Sleep(500);
 							system("cls");
@@ -139,21 +139,20 @@ int main(){
 						Sleep(500);
 						system("pause");
 						system("cls");
-						charge ();
-						system("cls");
 						
-						printf("\nDigite o valor do ingresso: ");
+						printf("Digite o valor do ingresso: ");
 						scanf("%f", &valTicket);
 						//totTicket = 0;
 						
+						Sleep(1500);
+						system("cls");
+						printf("Espetáculo criado com sucesso!!");
 						Sleep(2000);
 						system("cls");
 						charge();
 						break;
 						
 						}
-						
-				
 				}
 				else{
 					printf("O teatro ja existe\n");
@@ -202,7 +201,6 @@ int main(){
 						printf("Ingressos no valor de %.2fR$\n", valTicket);
 						printf("\nAté o momento: \n%i inteiras foram vendidas\n", intTicket);
 						printf("\n%i meias foram vendidas\n", halfTicket);
-						printf("O valor total dos ingressos é: R$ %.2f \n", valTicket);
 						//printf("O teatro arrecadou %.2fR$\n", (intTicket*valTicket) + (halfTicket*(valTicket/2)));
 						
 						//#Adda#: Corrigir meia entrada, valor não tem variavél própria, e não mostra mapa do teatro na compra
@@ -310,8 +308,3 @@ int main(){
 		}
 	}while(choice != 1 || choice != 2 || choice != 3);
 }
-
-
-
-
-
